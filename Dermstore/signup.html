@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up page</title>
+  
+    <style>
+       
+        body{
+            background-color: rgb(222, 222, 235);
+        }
+        #navbar {
+            /* width: 100%; */
+            height: auto;
+            border: 0px solid red; 
+           padding: 10px 20px;
+           background-color: white;
+          
+         }
+        #container{
+            width: 50%;
+            height: auto;
+            margin: auto;
+            margin-top: 30px;
+            border: 0px solid red;
+            background-color: white;
+            padding: 20px;
+        }
+        #container > form > div{
+           width: 90%;
+           height: auto;
+           border: px solid blue;
+           margin: auto;
+           margin-top: 30px;
+        }
+        #container > form > div input{
+            width: 100%;
+            height: 40px;
+        }
+        #container > form > div button{
+            width: 100%;
+            height: 40px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <img src="https://s1.thcdn.com/enterprise/assets/dermstore-global-a3ce7f42-4a2c-4cc5-ad05-ba594900fa02-logo-default.svg" alt="error">
+    </div>
+   <div id="container">
+      <form action="">
+          <div>
+            <label for="name"><b>Full Name</b></label><br>
+            <input id="name" type="text">
+          </div>
+          <div>
+           <label for="email"><b>Email address</b></label><br>
+           <input id="email" type="email">
+          </div>
+          <div>
+           <label for="confirm_email"><b>Confirm Email address</b></label><br>
+           <input id="confirm_email" type="email">
+          </div>
+          <div>
+           <label for="password"><b>Password</b></label><br>
+           <input id="password" type="password">
+           <p><b>Include a minimum of 6 characters, and contain at least 1 number</b></p>
+          </div>
+          <div>
+           <label for="confirm_password"><b>Confirm Password</b></label><br>
+           <input id="confirm_password" type="password">
+          </div>
+          <div>
+           <label for="phone"><b>Cell Phone Number (Optional) </b> </label><br>
+           <input id="number" type="number">
+         </div>
+         <div>
+            <button id="submit" type="submit">CONTINUE</button>
+            <!-- <input id="submit" type="submit"> -->
+         </div>
+      </form>
+   </div>
+</body>
+</html>
+<script>
+
+ let form=document.querySelector('form')
+ form.addEventListener("submit", signUpData );
+
+function signUpData(event){
+     event.preventDefault();
+
+     let Name= form.name.value;
+     let Email=  form.email.value ;
+     let Confirm_Email= form.confirm_email.value ;
+     let Pass= form.password.value ;
+     let Confirm_Pass= form.confirm_password.value ;
+     let Phone= form.number.value ;
+
+     if(Name=="" || Email=="" || Confirm_Email =="" ||  Pass =="" ||  Confirm_Pass=="" ||   Phone=="" ){
+        alert("fill the form completely")
+     }
+     else if(Email !==Confirm_Email ) {
+        alert(" email and confirm email does not match ")
+     }
+     else if(Pass !==Confirm_Pass){
+          alert ("password and confirm password does not match")
+     }
+     else{
+
+        let obj={
+            name: Name,
+            email: Email ,
+            confirm_email: Confirm_Email,
+            password: Pass,
+            confirm_password: Confirm_Pass,
+            number: Phone,
+        };
+
+         let SignUp_data_array=  JSON.parse(localStorage.getItem("signup_data"))|| []
+         SignUp_data_array.push(obj)
+        localStorage.setItem("signup_data", JSON.stringify(SignUp_data_array))
+        console.log(SignUp_data_array)
+
+        alert("signing up is successful ")
+     }
+}
+</script>
