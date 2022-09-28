@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermstore</title>
+    
+    <style>
+        #navbar{
+            width: 100%;
+            height: 200px;
+            border: 2px solid red;
+            margin: auto;
+        }
+        #navbar > div{
+            width: 100%;
+            height: 90px;
+            border: 0px solid rgb(47, 0, 255);
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #navbar :nth-child(1) > :nth-child(1){
+           font-size: 40px;
+         }
+          #navbar :nth-child(1) > :nth-child(2) input{
+           font-size: 30px;
+        } 
+        #navbar :nth-child(2) > div {
+            border: 0px solid red;
+            width: auto;
+            height: 100%;
+            padding: 0px 20px;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <!-- // 1st div -->
+        <div> 
+            <div><h1>Dermstore</h1></div>
+            <div><input type="search" placeholder="search here"></div>
+            <div>Account</div>
+            <div>Cart</div>
+           
+        </div>
+        <!-- // 2nd div -->
+        <div></div>
+
+    </div>
+</body>
+</html>
+<script>
+    let Navbar_bottom=["Brands", "Browse By", "Bestsellers", "Skin Care", "Makeup", "Hair Care", "Bath & Body", "The fragrance Shop", "Tools & Divices", "Gifts & Sets", "BeautyFix", "Offers", "New" ]
+    // let arr=["red", "black", "yellow","brown","violet", "Skin 101"];
+    navbarBottom (Navbar_bottom)
+   function navbarBottom (array){
+
+        array.forEach(function(el) {
+
+            const navbarBottom_divs = document.createElement('div');
+            navbarBottom_divs.innerText=el;
+            document.querySelector('#navbar >div +div').append( navbarBottom_divs);
+    
+        });
+    
+   }
+
+</script>
