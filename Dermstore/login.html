@@ -66,10 +66,10 @@
             <form action="">
                 <h2>Existing Customers</h2>
                 <label for="email"> <b>Email address</b></label><br>
-                <input type="email" ><br>
+                <input id="email" type="email" ><br>
 
                 <label for="password"> <b>Password</b></label><br>
-                <input type="password"><br>
+                <input id="password" type="password"><br>
 
                 <p>FORGOTTEN YOUR PASSWORD?</p>
 
@@ -85,5 +85,34 @@
 </body>
 </html>
 <script>
+  let form= document.querySelector('form');
+    form.addEventListener("submit", login)
 
+    function login(event){
+        event.preventDefault();
+
+        let Email = form.email.value
+        let Pass=form.password.value;
+        let obj={
+            email:Email,
+            password:Pass,
+        }
+        let loginArr=[]
+        loginArr.push(obj)
+
+        if(checkData(obj)){
+            alert("login successfull, Welcome to Dermstore")
+        }
+        else{
+            alert("not found")
+        }
+    }
+    function checkData(obj){
+        let dataFromLS=JSON.parse(localStorage.getItem("signup_data")) || []
+        for(let i=0;i<dataFromLS.length;i++){
+            if(dataFromLS[i].email==obj.email && dataFromLS[i].password==obj.password){
+            return true;
+           }
+        }                 
+    }
 </script>
