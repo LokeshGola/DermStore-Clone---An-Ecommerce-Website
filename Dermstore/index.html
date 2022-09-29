@@ -7,11 +7,21 @@
     <title>Dermstore</title>
     
     <style>
+        /* body{
+            background-color: rgb(222, 222, 235);
+        } */
+        #before_navbar{
+            width: 100%;
+            height: 40px;
+            background-color: rgb(242,242,242);
+        }
         #navbar{
             width: 100%;
             height: 200px;
-            border: 2px solid red;
+            border: px solid red;
             margin: auto;
+            background-color: white;
+    
         }
         #navbar > div{
             width: 100%;
@@ -36,13 +46,164 @@
             display: flex;
             align-items: center;
         }
+        #upper_strip_banner{
+            width: 100%;
+            height: 50px;
+            border: 0px solid red;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(242,242,242);          
+        }
+        #lower_strip_banner{
+            width: 100%;
+            height: 50px;
+            border: 0px solid rgb(68, 0, 255);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;          
+            background-color:rgb(204,204,204);
+        }
+        /* slideshow container */
+        #slideshow_container{
+            width: 100%;
+            height: 400px;
+            position: relative;
+            margin: auto;
+        }
+        #slideshow_container img{
+            width: 100%;
+        }
+        /* Next and Previous Buttons */
+        .prev, .next{
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 15px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: #bbb;
+        }
+        /* Position the "next button" to the right */
+        .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        #Dot_div{
+            text-align: center;
+        }
+        .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+        background-color: #717171;
+        }
+
+        /* Main event */
+        #mainEvent{
+            margin-top: 50px;
+        }
+        #mainEvent img{
+            /* margin-top: 20px; */
+           width: 100%;        
+        }
+        #shopByCategory{
+            width: 100%;
+            height: auto;
+        }
+        #shopByCategory p{
+            text-align: center;
+            font-size: 30px;
+        }
+        #shopByCategory > div:nth-child(2){
+          width: 100%;
+          height: auto;
+          margin: auto;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+        #shopByCategory img{
+            width: 100%;
+        }
+
+        /* cards */
+        #card{
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        #card > div{
+            width: 30%;
+            height: auto;
+            text-align: center;          
+        }
+        .Cards img{
+          width: 100%;
+        }
+        .Cards > img + p{
+            font-size: 20px;
+        }
+        #brands{
+            width: 100%;
+            height: auto;
+        }
+        #brands p{
+            text-align: center;
+            font-size: 30px;
+        }
+        #brands > div:nth-child(2){
+          width: 100%;
+          height: auto;
+          margin: auto;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+        }
+        #brands >div >div{          
+            width: 15%;
+        }
+        #brands img{
+            width: 100%;
+        }
     </style>
 </head>
 <body>
+    <div id="before_navbar"></div>
     <div id="navbar">
         <!-- // 1st div -->
         <div> 
-            <div><h1>Dermstore</h1></div>
+            <div><img src="https://s1.thcdn.com/enterprise/assets/dermstore-global-a3ce7f42-4a2c-4cc5-ad05-ba594900fa02-logo-default.svg" alt="error"></div>
             <div><input type="search" placeholder="search here"></div>
             <div>Account</div>
             <div>Cart</div>
@@ -50,24 +211,173 @@
         </div>
         <!-- // 2nd div -->
         <div></div>
+    </div>
 
+    <div id="upper_strip_banner"></div>
+    <div id="lower_strip_banner">
+        <p> Rewards members get DOUBLE on our Most-Wanted brands.START EARNING</p>
+    </div>
+
+    <div id="slideshow_container">
+         
+        <!-- slide show -->
+        <!-- 1 -->
+        <div class="mySlides">
+            <div class="numbertext"> 1 / 4</div>
+            <img src="https://static.thcdn.com/images/xlarge/webp/widgets/208-us/47/original-Neocutis_1920x700_%281%29-082647.png" alt="">
+        </div>
+        <!-- 2 -->
+        <div class="mySlides">
+            <div class="numbertext"> 2 / 4</div>
+            <img src="https://static.thcdn.com/images/xlarge/webp/widgets/208-us/45/original-0831-STDCRE-40746-DS-SJ-September-Batching-Priority-2-Shot-4-HomePage_1920x700-055145.jpg" alt="">
+        </div>
+        <!-- 3 -->
+        <div class="mySlides">
+            <div class="numbertext"> 3 / 4</div>
+            <img src="https://static.thcdn.com/images/xlarge/webp/widgets/208-us/27/original-Advent_%2B_Roundel_1920x700-075327.png" alt="">
+        </div>
+        <!-- 4 -->
+        <div class="mySlides">
+            <div class="numbertext"> 4 / 4</div>
+            <img src="https://static.thcdn.com/images/xlarge/webp/widgets/208-us/30/original-0826-STDCRE-40745-DS-EF-Sept-Batch-SHOT05-HomePage_1920x700-021330.jpg" alt="">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)"><</a>
+        <a class="next" onclick="plusSlides(1)">></a>
+
+    </div>
+    <br>
+    <!-- dots -->
+    <div id="Dot_div">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <!-- <div>
+        <h2>2x Points on Our Most-Wanted Brands</h2>
+        <p>Rewards members earn DOUBLE points on some of our top-rated brands.</p>
+    </div> -->
+
+    <div id="mainEvent"><img src="https://static.thcdn.com/images/large/webp/widgets/208-us/52/original-Hair_Day_Waitlist_%281%29-091352.jpg" alt=""></div>
+
+    <div id="shopByCategory">
+        <div><p>Shop By Category</p></div>
+        <div >
+            <div >
+                <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/20/DS_Round_Nav_-_Untitled_Page_%287%29-052520.png" alt="error">             
+            </div>
+            <div>
+                <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/56/DS_Round_Nav_-_Untitled_Page_%288%29-052556.png" alt="error">            
+            </div>
+            <div>
+                <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/32/DS_Round_Nav_-_Untitled_Page_%289%29-052632.png" alt="error">          
+            </div>
+            <div>
+                <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/03/DS_Round_Nav_-_Untitled_Page_%2810%29-052703.png" alt="error">           
+            </div>
+            <div>
+                <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/49/DS_Round_Nav_-_Untitled_Page_%2813%29-053649.png" alt="error">              
+            </div>
+            <div>
+                <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/36/DS_Round_Nav_-_Untitled_Page_%2825%29-063536.png" alt="error">
+            </div>
+        </div>
+    </div>
+    <div id="card">
+        <div class="Cards">
+            <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/08/Holifrog-013608.png" alt="error">
+            <p>New from Holifrog & Only At Dermstore</p>
+            <p>Helps strengthen & resurface for smoother, brighter & firmer-looking skin.</p>
+        </div>
+        <div class="Cards">
+            <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/54/0826-STDCRE-40745-DS-EF-Sept-Batch-SHOT30-HP_LPSQ_BANNER_676x556-072154.jpg" alt="error">
+            <p>New from Living Proof</p>
+            <p>A reparative treatment that repairs broken bonds & fortifies hair.</p>
+        </div>
+        <div class="Cards">
+            <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/11/AB_676x556-020211.png" alt="error">
+            <p>New from Augustinus Bader: Introducing The Eyebrow and Lash Enhancing Serum</p>
+            <p>Believe your eyes: the skin-changing brand has set its sights on lashes & brows with a brand-new formula to help nourish, stimulate & revive the follicles responsible for healthy, thick brows & lashes.</p>
+        </div>
+    </div>
+    <!-- featured brands -->
+    <div id="brands">
+        <div><p>Featured Brands</p></div>
+        <div >
+            <div >
+                <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/19/SR-logo_2000x2000-060919.jpg" alt="error">             
+            </div>
+            <div>
+                <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/59/Skinc-014559.jpg" alt="error">            
+            </div>
+            <div>
+                <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/34/original-220322-ELTAMD-LOGO-RGB-01_%28002%29-014534.png" alt="error">          
+            </div>
+            <div>
+                <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/09/Chantecaille-033909.png" alt="error">           
+            </div>
+            <div>
+                <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/08/SkinMedica-014608.jpg" alt="error">              
+            </div>
+            <div>
+                <img src="https://static.thcdn.com/images/small/webp/widgets/208-us/21/augustinusbader-124221.gif" alt="error">
+            </div>
+        </div>
     </div>
 </body>
 </html>
 <script>
     let Navbar_bottom=["Brands", "Browse By", "Bestsellers", "Skin Care", "Makeup", "Hair Care", "Bath & Body", "The fragrance Shop", "Tools & Divices", "Gifts & Sets", "BeautyFix", "Offers", "New" ]
-    // let arr=["red", "black", "yellow","brown","violet", "Skin 101"];
+    
     navbarBottom (Navbar_bottom)
    function navbarBottom (array){
-
         array.forEach(function(el) {
-
             const navbarBottom_divs = document.createElement('div');
             navbarBottom_divs.innerText=el;
-            document.querySelector('#navbar >div +div').append( navbarBottom_divs);
-    
-        });
-    
+            document.querySelector('#navbar >div +div').append( navbarBottom_divs);   
+        });   
    }
+   
+    let upper_strip_banner=[ "FREE US Shipping $50+", "New Customers Save 15%*",  "Dermstore Rewards",  "Ask The Esthetician"
+    , " Download Our App",  "Refer a Friend, Get $15"]
 
+    upper_strip(upper_strip_banner)
+    function upper_strip (array){
+
+    array.forEach(function(el) {
+        const strip_divs = document.createElement('div');
+        strip_divs.innerText=el;
+        document.querySelector('#upper_strip_banner').append( strip_divs);   
+    });
+  }
+
+    //slideshow
+        let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    }
+
+   
 </script>
