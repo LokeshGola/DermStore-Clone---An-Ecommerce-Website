@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dermstore</title>
+
+    
+
     
     <style>
-        /* body{
-            background-color: rgb(222, 222, 235);
-        } */
+       
         #before_navbar{
             width: 100%;
             height: 40px;
@@ -18,9 +19,10 @@
         #navbar{
             width: 100%;
             height: 200px;
-            border: px solid red;
+            border: 2px solid red;
             margin: auto;
             background-color: white;
+            
     
         }
         #navbar > div{
@@ -65,14 +67,17 @@
             background-color:rgb(204,204,204);
         }
         /* slideshow container */
+        *{box-sizing: border-box;}
+
         #slideshow_container{
             width: 100%;
-            height: 400px;
+            height: auto;
             position: relative;
             margin: auto;
         }
         #slideshow_container img{
             width: 100%;
+            
         }
         /* Next and Previous Buttons */
         .prev, .next{
@@ -87,6 +92,9 @@
             border-radius: 0 3px 3px 0;
             user-select: none;
             background-color: #bbb;
+
+            transition: 0.6s ease;
+            user-select: none;
         }
         /* Position the "next button" to the right */
         .next {
@@ -126,10 +134,14 @@
         .active, .dot:hover {
         background-color: #717171;
         }
+       @keyframes fade {
+            from {opacity: 0.4}
+            to {opacity: 1}
+        }
 
         /* Main event */
         #mainEvent{
-            margin-top: 50px;
+            margin-top: 20px;
         }
         #mainEvent img{
             /* margin-top: 20px; */
@@ -196,6 +208,134 @@
         #brands img{
             width: 100%;
         }
+        #Bestsellers{
+            width: 100%;
+            height: auto;
+            margin: auto;
+/* display: none; */
+            position: relative;
+        }
+        #Bestsellers #heading > p{
+          font-size: 30px;
+          text-align: center;
+        }
+        #Bestsellers #bestSellerDivs{
+            width: auto;
+            height: auto;
+            display: flex;flex-direction: row;
+            /* margin: auto; */
+            border: 0px solid red;
+
+        }
+        #Bestsellers #bestSellerDivs >div{
+            width: 100%;
+            height: auto;
+            border: 0px solid rgb(89, 0, 255);
+          
+            text-align: center;
+            padding: 20px;
+        }
+        #Bestsellers #bestSellerDivs >div >img{
+            width: 80%;
+        }
+        #Bestsellers #bestSellerDivs >div>div{
+            width: 70%;
+            height: auto;
+            border: 1px solid black;
+            margin: auto;
+        }
+        #Bestsellers #bestSellerDivs >div> button{
+            width: 100%;
+            height: 40px;
+            background-color: black;
+            color: white;
+        }
+
+       /* 2nd slider */
+       .container{
+         width: 100%;
+         height: auto;
+         border: 0px solid red;
+         margin-top: 20px;
+       }
+       .container #text{
+        border: 0px solid red;
+        
+       }
+       .container #text > p:nth-child(1){
+        text-align: center;
+         font-size: 25px;
+        margin-bottom: 0px;
+       }
+       .container #text > p:nth-child(2){
+        text-align: center;
+       }
+       #childContainer {
+        width: 100%;
+        height: auto;
+        border: 0px solid rgb(20, 197, 123);
+        display: flex;
+        margin: auto;
+       }
+       #childContainer >div:nth-child(1) {
+        width: 40%;
+        height: auto;
+        border: 0px solid blue;
+        /* margin: auto; */
+       }
+       #childContainer >div:nth-child(1) img {
+        width: 90%;
+       }
+       #childContainer >div:nth-child(2) {
+        width: 60%;
+        height: auto;
+        border: 0px solid blue;
+        margin: auto;
+       }
+       .child_Slider_2{
+          width: 40%;
+          height: auto;
+          margin: auto;
+          border: 0px solid red;
+          text-align: center;
+          padding: 10px 10px 0px 10px ;
+       }
+       .child_Slider_2 img{
+        width: 100%;
+      }
+      .child_Slider_2 button{
+        width: 100%;
+        height: 40px;
+        background-color: black;
+        color: white;
+        
+      }
+      /* // 2nd slider css */
+      .slider_2{
+        width: 100%;
+        position: relative;
+        margin :auto;
+      }
+      
+      .Dot{
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease ;
+        text-align:end;
+      }
+      
+      .active, .Dot:hover{ 
+        background-color: #717171;
+      }
+      @keyframes fade {
+        from{opacity:0.4}
+        to {opacity: 1;}
+      }
     </style>
 </head>
 <body>
@@ -241,22 +381,81 @@
             <div class="numbertext"> 4 / 4</div>
             <img src="https://static.thcdn.com/images/xlarge/webp/widgets/208-us/30/original-0826-STDCRE-40745-DS-EF-Sept-Batch-SHOT05-HomePage_1920x700-021330.jpg" alt="">
         </div>
-        <a class="prev" onclick="plusSlides(-1)"><</a>
-        <a class="next" onclick="plusSlides(1)">></a>
-
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
     <br>
-    <!-- dots -->
-    <div id="Dot_div">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
     </div>
+    <br>
 
-    <!-- <div>
-        <h2>2x Points on Our Most-Wanted Brands</h2>
-        <p>Rewards members earn DOUBLE points on some of our top-rated brands.</p>
-    </div> -->
+    <br>
+  <!-- 2nd slides -->
+    
+    <div class="container">
+        <div id="text">         
+            <p>Last Chance: 2x Points on Our Most-Wanted Brands</p>
+            <p>Rewards members earn DOUBLE points on some of our top-rated brands.</p>
+        </div>
+        <div id="childContainer">
+            <div> <img src="https://static.thcdn.com/images/medium/webp/widgets/208-us/55/Pro_2x_PTS_last_chance-051555.png" alt=""></div>
+           
+            <!-- slider-2 start here  -->
+            <div class="slider_2">
+                <!-- 1  -->
+                <div class="child_Slider_2">
+                    <img src="https://static.thcdn.com/images/small/webp//productimg/original/11291496-1824871578503201.jpg" alt="">
+                    <p>EltaMD UV Clear Broad-Spectrum SPF 44 (1.8 oz.)</p>
+                    <p>****4611</p>
+                    <p> $39.00</p>
+                    <button>QUICK BUY</button>
+                </div>
+                <!-- 2 -->
+                <div class="child_Slider_2">
+                    <img src="https://static.thcdn.com/images/small/webp//productimg/original/13908285-1764980628345956.jpg" alt="">
+                    <p>  Total Protection™ Face Shield SPF 50 (PA+++) (1.8 fl. oz.)</p>
+                    <p>****2645</p>
+                    <p> $59.00</p>
+                    <button>QUICK BUY</button>
+                </div>
+                <!-- 3 -->
+                <div class="child_Slider_2">
+                    <img src="https://static.thcdn.com/images/small/webp//productimg/original/11291965-1894871578716777.jpg" alt="">
+                    <p>EltaMD UV Clear Broad-Spectrum SPF 36 (1.5 oz.)</p>
+                    <p>****3621</p>
+                    <p> $79.00</p>
+                    <button>QUICK BUY</button>
+                </div>
+                <!-- 4 -->
+                <div class="child_Slider_2">
+                    <img src="https://static.thcdn.com/images/small/webp//productimg/original/11709474-2084866361945395.jpg" alt="">
+                    <p>Mosco MD UV Clear Broad-Spectrum SPF 55 (1.4 oz.)</p>
+                    <p>****46</p>
+                    <p> $99.00</p>
+                    <button>QUICK BUY</button>
+                </div>
+                 <!-- Next and previous buttons -->
+                <a class="prev" onclick="PlusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="PlusSlides(1)">&#10095;</a>  
+                <br>  
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="Dot" onclick="CurrentSlide(1)"></span>
+                    <span class="Dot" onclick="CurrentSlide(2)"></span>
+                    <span class="Dot" onclick="CurrentSlide(3)"></span>
+                    <span class="Dot" onclick="CurrentSlide(4)"></span>
+                </div>           
+           </div>
+            <br>
+        </div>
+    </div>
+ <!-- finish 2nd slider -->
+
 
     <div id="mainEvent"><img src="https://static.thcdn.com/images/large/webp/widgets/208-us/52/original-Hair_Day_Waitlist_%281%29-091352.jpg" alt=""></div>
 
@@ -324,6 +523,12 @@
             </div>
         </div>
     </div>
+
+    <div id="Bestsellers">
+        <div id="heading"> <p>Bestsellers</p></div>
+        <div id="bestSellerDivs" >   </div>
+       
+    </div>
 </body>
 </html>
 <script>
@@ -342,7 +547,7 @@
     , " Download Our App",  "Refer a Friend, Get $15"]
 
     upper_strip(upper_strip_banner)
-    function upper_strip (array){
+  function upper_strip (array){
 
     array.forEach(function(el) {
         const strip_divs = document.createElement('div');
@@ -379,5 +584,108 @@
     dots[slideIndex-1].className += " active";
     }
 
-   
+
+   // Bestsellers
+let array=[ { 
+    imageLink: "https://static.thcdn.com/images/small/webp//productimg/original/11289609-8744892770898772.jpg",
+    para: "SkinCeuticals C E Ferulic (1 fl. oz.)",
+    border_para: "$22 SkinCeuticals Gift",
+    price: "$169.00",
+},
+{
+    imageLink: "https://static.thcdn.com/images/small/webp//productimg/original/13315093-7444974668249790.jpg",
+    para: "SkinCeuticals C E Ferulic (1 fl. oz.)",
+    border_para: "$22 SkinCeuticals Gift",
+    price: "$165.00",
+},
+{
+    imageLink: "https://static.thcdn.com/images/small/webp//productimg/original/13812005-4724980887145978.jpg",
+    para: "SkinCeuticals C E Ferulic (1 fl. oz.)",
+    border_para: "$22 SkinCeuticals Gift",
+    price: "$160.00",
+},
+{
+    imageLink: "https://static.thcdn.com/images/small/webp//productimg/original/11291543-2074864291141689.jpg",
+    para: "SkinCeuticals C E Ferulic (1 fl. oz.)",
+    border_para: "$22 SkinCeuticals Gift",
+    price: "$169.00",
+},
+{
+    imageLink: "https://static.thcdn.com/images/small/webp//productimg/original/12664555-1704871739992403.jpg",
+    para: "SkinCeuticals C E Ferulic (1 fl. oz.)",
+    border_para: "$22 SkinCeuticals Gift",
+    price: "$165.00",
+},{
+    imageLink: "https://static.thcdn.com/images/small/webp//productimg/original/11290635-9174978287699645.jpg",
+    para: "SkinCeuticals C E Ferulic (1 fl. oz.)",
+    border_para: "$22 SkinCeuticals Gift",
+    price: "$160.00",
+}
+]
+     bestsellers(array)
+   function bestsellers(arr){
+
+    arr.forEach(function(el){
+
+        let image = document.createElement('img');
+        image.src=el.imageLink
+
+        let Para = document.createElement('p');
+       Para.innerText=el.para
+
+        let paraWithBorder = document.createElement('p');
+        paraWithBorder.innerText=el.border_para
+
+        let borderDiv = document.createElement('div');
+        borderDiv.append(paraWithBorder)
+
+        let rating = document.createElement('p');
+        rating.innerText="****4610"
+
+        let Price = document.createElement('p');
+       Price.innerText=el.price
+
+        let btn = document.createElement('button');
+        btn.innerText="QUICK BUY"
+
+        let boxDiv = document.createElement('div')      
+        boxDiv.append(image,Para,borderDiv,rating,Price,btn);
+
+       document.querySelector('#bestSellerDivs').append( boxDiv);
+    //    console.log(boxDiv)
+    })
+      
+   }
+
+//    2nd slide code starts here
+
+     slideIndex = 1;
+    ShowSlides(slideIndex);
+
+    // Next/previous controls
+    function PlusSlides(n) {
+       ShowSlides(slideIndex += n);
+    }
+    // Thumbnail image controls
+    function CurrentSlide(n) {
+       ShowSlides(slideIndex = n);
+    }
+
+    function ShowSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("child_Slider_2");
+        let dots = document.getElementsByClassName("Dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    } 
+
+
 </script>
