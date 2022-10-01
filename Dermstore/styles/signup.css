@@ -1,0 +1,38 @@
+       
+    body{
+        background-color: rgb(222, 222, 235);
+    }
+    #navbar {
+        /* width: 100%; */
+        height: auto;
+        border: 0px solid red; 
+       padding: 10px 20px;
+       background-color: white;
+      
+     }
+    #container{
+        width: 50%;
+        height: auto;
+        margin: auto;
+        margin-top: 30px;
+        border: 0px solid red;
+        background-color: white;
+        padding: 20px;
+    }
+    #container > form > div{
+       width: 90%;
+       height: auto;
+       border: px solid blue;
+       margin: auto;
+       margin-top: 30px;
+    }
+    #container > form > div input{
+        width: 100%;
+        height: 40px;
+    }
+    #container > form > div button{
+        width: 100%;
+        height: 40px;
+        background-color: black;
+        color: white;
+    }

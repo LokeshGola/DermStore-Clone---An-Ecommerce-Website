@@ -1,0 +1,43 @@
+
+ #navbar + h2{
+     font-family:Arial, Helvetica, sans-serif;
+ }
+ #navbar a{
+     text-decoration: none;
+     color: black;
+ }
+ #container{
+     width:70%;
+     height: auto;
+     border: 0px solid red;
+
+ }
+ 
+ .item div{
+    width: 60%;
+    height: 100px;
+    border: 0px solid green;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+ }
+ .item img{
+    height: 70%;
+ }
+
+table{
+ font-family: Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+width: 100%;
+margin: auto;
+margin-top: 20px;
+text-align: center;  
+}
+
+table th,
+table td{
+ padding: 10px;
+ text-align: center;     
+}
+ 

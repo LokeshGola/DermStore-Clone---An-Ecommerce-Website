@@ -1,0 +1,50 @@
+
+
+ body{
+     background-color: rgb(222, 222, 235);
+ }
+ #navbar {
+     /* width: 100%; */
+     height: auto;
+     border: 0px solid red; 
+    padding: 10px 20px;
+    background-color: white;
+   
+  }
+  #middle{
+     width: 80%;
+     height: auto;
+     border: 0px solid red;
+     margin: auto;
+     display: flex;
+     margin-top: 30px;
+     
+  }
+  #middle >div{
+    width: 40%;
+     height: auto;
+     border: 0px solid rgb(47, 0, 255);
+     margin: auto;
+     /* font-size: 30px; */
+     background-color: white;
+     padding: 30px;
+     line-height: 30px;
+  }
+  #middle h2{
+     font-size: 30px;
+  }
+  #middle :nth-child(2){
+     margin-top: 0px;
+  }
+  #middle input{
+     width: 100%;
+     height: 40px;
+     
+  }
+  #middle button{
+     width: 100%;
+     height: 40px;
+     background-color: black;
+     color: white;
+  }
+  
