@@ -15,3 +15,5 @@ You can also add your product to the cart and buy it.
 * HTML
 * CSS
 * JavaScript
+<!-- portfolio link -->
+<a href="https://lokeshgola.github.io/">Portfolio</a>
